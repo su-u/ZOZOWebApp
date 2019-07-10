@@ -1,0 +1,27 @@
+{
+  "name": "ZOZOWebApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/su-u/ZOZOWebApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/su-u/ZOZOWebApp/issues"
+  },
+  "homepage": "https://github.com/su-u/ZOZOWebApp#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/node": "^12.6.2"
+  }
+}
