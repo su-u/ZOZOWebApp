@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@types/node": "^12.6.2",
+    "canvas": "^2.5.0",
     "express": "^4.17.1"
   }
 }
