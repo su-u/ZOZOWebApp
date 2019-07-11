@@ -11,7 +11,7 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
         return -1;
     }
 
-    fs.readFile(__dirname + finename, function (err, data) {
+    fs.readFile(__dirname + '/' + filename, function (err, data) {
         if (err) throw err;
 
         var img = new Image;
@@ -39,4 +39,10 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
             console.log("img saved");
         });
     });
+
+    return{
+        toString : function (){
+            
+        }
+    }
 });

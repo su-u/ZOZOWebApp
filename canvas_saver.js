@@ -3,9 +3,9 @@
 module.exports = (function () {
     "use strict";
 
-    var fs = require('fs');
+    const fs = require('fs');
 
-    var canvas_to_base64 = function (canvas) {
+    const canvas_to_base64 = function (canvas) {
         return canvas.toDataURL().split(',')[1];
     }
 
