@@ -26,9 +26,9 @@ fs.readFile(__dirname + '/huku.PNG', function (err, data) {
     for (var y = 0; y < imagedata.height; y++) {
         for (var x = 0; x < imagedata.width; x++) {
             var index = (y * imagedata.width + x) * 4;
-            imagedata.data[index] = imagedata.data[index]; // R
-            imagedata.data[index + 1] = imagedata.data[index]; // G
-            imagedata.data[index + 2] = imagedata.data[index]; // B
+            imagedata.data[index] = 154;
+            imagedata.data[index + 1] = 219;
+            imagedata.data[index + 2] = 13;
             // imagedata.data[index+3]; // alpha
         }
     }
