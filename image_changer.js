@@ -11,7 +11,7 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
         return -1;
     }
 
-    fs.readFile(__dirname + '/' + filename, function (err, data) {
+    const data = fs.readFileSync(__dirname + '/' + filename, function (err, data) {
         if (err) throw err;
 
         var img = new Image;
@@ -38,11 +38,7 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
         canvas_saver.save(canvas, "huku2.png", function () {
             console.log("img saved");
         });
+        return canvas.toDataURL().split(',')[1];
     });
-
-    return{
-        toString : function (){
-            
-        }
-    }
+    return Buffer.from(data).toString("base64");
 });
