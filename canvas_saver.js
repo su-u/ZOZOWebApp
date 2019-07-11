@@ -11,7 +11,7 @@ module.exports = (function () {
 
     // 追記: もっと簡単にできる方法がたしかあります(その方法は忘れました)
     var decode_and_copy = function (string, filename, callback) {
-        var buffer = new Buffer(string, 'base64');
+        var buffer = new Buffer.from(string, 'base64');
         fs.writeFile(filename, buffer, callback);
     }
 
