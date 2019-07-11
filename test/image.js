@@ -1,4 +1,4 @@
-const imgChanger = require('imageChanger')
+const imgChanger = require('../image_changer.js')
 const assert = require('assert')
 
 describe('ImageChangerTest', function() {
