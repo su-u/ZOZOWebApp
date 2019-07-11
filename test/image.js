@@ -1,3 +1,5 @@
+"use strict";
+
 const imgChanger = require('../image_changer.js')
 const assert = require('assert')
 
