@@ -3,6 +3,6 @@ const assert = require('assert')
 
 describe('ImageChangerTest', function() {
   it('color', function() {
-      imageChanger(150,154,165)
+      imgChanger.imageChanger(150,154,165);
   })
 })
