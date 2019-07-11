@@ -1,4 +1,4 @@
-module.exports.imageChanger = (function (color_r, color_g, color_b, color_a = 1) {
+module.imageChanger = (function (color_r, color_g, color_b, color_a = 1) {
     var fs = require('fs');
 
     var canvas_saver = require('./canvas_saver.js');
