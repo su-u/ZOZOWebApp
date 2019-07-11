@@ -1,10 +1,10 @@
 module.exports.imageChanger = (function (color_r, color_g, color_b, color_a = 1) {
-    var fs = require('fs');
+    const fs = require('fs');
 
-    var canvas_saver = require('./canvas_saver.js');
+    const canvas_saver = require('./canvas_saver.js');
 
     // node-canvas
-    var Canvas = require('canvas'),
+    const Canvas = require('canvas'),
         Image = Canvas.Image;
 
     fs.readFile(__dirname + '/huku.PNG', function (err, data) {
