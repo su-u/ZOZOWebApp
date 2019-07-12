@@ -40,9 +40,9 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
 
 
     // データを保存
-    canvas_saver.save(canvas, "huku4.png", function () {
-        console.log("img saved");
-    });
+    // canvas_saver.save(canvas, "huku4.png", function () {
+    //     console.log("img saved");
+    // });
     // return canvas.toDataURL().split(',')[1];
     let c = canvas.toDataURL().split(',')[1];
     return Buffer.from(c, 'base64').toString("base64");
