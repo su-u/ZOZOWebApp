@@ -14,16 +14,16 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     const data = fs.readFileSync(__dirname + '/' + filename, function (err, data) {
         if (err) throw err;
 
-        var img = new Image;
+        const img = new Image;
         img.src = data;
-        var canvas = new Canvas.Canvas(img.width, img.height);
-        var ctx = canvas.getContext('2d');
+        const canvas = new Canvas.Canvas(img.width, img.height);
+        const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, img.width, img.height);
 
-        var imagedata = ctx.getImageData(0, 0, img.width, img.height);
+        let imagedata = ctx.getImageData(0, 0, img.width, img.height);
 
-        for (var y = 0; y < imagedata.height; y++) {
-            for (var x = 0; x < imagedata.width; x++) {
+        for (let y = 0; y < imagedata.height; y++) {
+            for (let x = 0; x < imagedata.width; x++) {
                 var index = (y * imagedata.width + x) * 4;
                 imagedata.data[index]       = color_r;
                 imagedata.data[index + 1]   = color_g;
