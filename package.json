@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/su-u/ZOZOWebApp#readme",
   "devDependencies": {
+    "expect": "^24.8.0",
+    "supertest": "^4.0.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {
