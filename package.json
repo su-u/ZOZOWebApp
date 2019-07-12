@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "mocha",
+    "test": "mocha --exit",
     "run": "node ./ICS.js"
   },
   "repository": {
