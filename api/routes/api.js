@@ -41,8 +41,8 @@ router.get('/test', function (req, res, next) {
         });
     }
 
-    //値チェック
-    if (color.length != 6) {
+    const is6characters = color.length == 6;
+    if (!is6characters) {
         res.json({
             status: 400,
             message: "The number of characters in the color value is not 6.",
@@ -50,6 +50,10 @@ router.get('/test', function (req, res, next) {
         });
     }
 
+    const segments = color.match(/.{2}/g);
+    let r = segments[0];
+    let g = segments[1];
+    let b = segments[2];
 
 
     const [status, result] = imgChanger.imageChanger('./huku.PNG', 120, 242, 235);
