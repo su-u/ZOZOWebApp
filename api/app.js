@@ -12,7 +12,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
+        
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1', require('./routes/api.js'));
