@@ -8,6 +8,7 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
         return color >= 0 && color < 255;
     }
     if(!checkColor(color_r) || !checkColor(color_g) || !checkColor(color_b)){
+        throw color_r;
         return -1;
     }
 
@@ -35,10 +36,11 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
         ctx.putImageData(imagedata, 0, 0);
 
         // データを保存
-        canvas_saver.save(canvas, "huku2.png", function () {
-            console.log("img saved");
-        });
+        // canvas_saver.save(canvas, "huku4.png", function () {
+        //     console.log("img saved");
+        // });
         return canvas.toDataURL().split(',')[1];
     });
     return Buffer.from(data).toString("base64");
+    return "";
 });
