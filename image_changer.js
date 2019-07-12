@@ -7,16 +7,20 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     const checkColor = function (color) {
         return color >= 0 && color < 255;
     }
+
+    const convert_toBase64 = function (data) {
+        return data.toDataURL().split(',')[1];
+    }
+
     if (!checkColor(color_r) || !checkColor(color_g) || !checkColor(color_b)) {
-        return -1;
+        return [-1, "Invalid color value."];
     }
 
     let data;
     try {
         data = fs.readFileSync(__dirname + '/' + filename);
     } catch (error) {
-        console.log(error);
-        return -1;
+        return [-1, error];
     }
 
     const img = new Image;
@@ -44,6 +48,5 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     //     console.log("img saved");
     // });
     // return canvas.toDataURL().split(',')[1];
-    let c = canvas.toDataURL().split(',')[1];
-    return Buffer.from(c, 'base64').toString("base64");
+    return [1, Buffer.from(convert_toBase64(canvas), 'base64').toString("base64")];
 });
