@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/v1/', require('./routes/api.js'));
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -34,8 +36,12 @@ app.use(function (err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  res.status(err.status || 3000);
   res.render('error');
+});
+
+var server = app.listen(3000, function(){
+  console.log("Node.js is listening to PORT:" + server.address().port);
 });
 
 module.exports = app;
