@@ -28,7 +28,6 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     const canvas = new Canvas.Canvas(img.width, img.height);
     const ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
-
     let imagedata = ctx.getImageData(0, 0, img.width, img.height);
 
     for (let y = 0; y < imagedata.height; y++) {
@@ -47,6 +46,5 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     // canvas_saver.save(canvas, "huku4.png", function () {
     //     console.log("img saved");
     // });
-    // return canvas.toDataURL().split(',')[1];
     return [1, Buffer.from(convert_toBase64(canvas), 'base64').toString("base64")];
 });
