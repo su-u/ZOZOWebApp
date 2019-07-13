@@ -1,14 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const checkTypeValue = (type) => {
-    if (type) {
-        return [1, '', type];
-    } else {
-        return [-1, 'type is empty.', ''];
-    }
-}
-
 const checkColorValue = (color) => {
     if (!color) {
         return [-1, 'color is empty.', 0, 0, 0];
