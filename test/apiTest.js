@@ -34,7 +34,6 @@ describe('ApiTest', function (done) {
                 response: ''
             }, done);
     });
-
     it('Color value', function (done) {
         request(app)
             .get('/api/v1/test?color=ffffff&type=testtype')
