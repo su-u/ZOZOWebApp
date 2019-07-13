@@ -10,7 +10,7 @@ apitest('/api/v1/bottoms');
 apitest('/api/v1/shoes');
 
 describe('Calltest [/]', function (done) {
-    it('index', function (done) {
+    it('Index', function (done) {
         request(app)
             .get('/')
             .expect(200)

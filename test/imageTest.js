@@ -7,5 +7,5 @@ describe('ImageChangerTest', function () {
     it('color', function () {
         const [status, result] = imgChanger.imageChanger('./img/IMG_0769_c.PNG', 245, 242, 66);
         assert.equal(1, status);
-    })
-})
+    });
+});
