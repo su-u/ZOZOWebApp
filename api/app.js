@@ -12,7 +12,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-        
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1', require('./routes/api.js'));
@@ -42,8 +42,8 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-var server = app.listen(3000, function () {
-    console.log("Node.js is listening to PORT:" + server.address().port);
-});
+// var server = app.listen(3000, function () {
+//     console.log("Node.js is listening to PORT:" + server.address().port);
+// });
 
 module.exports = app;
