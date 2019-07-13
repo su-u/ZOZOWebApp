@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/su-u/ZOZOWebApp#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
     "expect": "^24.8.0",
+    "install": "^0.13.0",
     "mocha": "^6.1.4",
     "supertest": "^4.0.2"
   },
