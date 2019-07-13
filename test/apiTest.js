@@ -16,7 +16,7 @@ describe('ApiTest', function (done) {
             .end(done);
 
     });
-    it('Non value test', function (done) {
+    it('Non value', function (done) {
         request(app)
             .get('/api/v1/test')
             .expect(400, {
@@ -25,9 +25,9 @@ describe('ApiTest', function (done) {
                 response: ''
             }, done);
     });
-    it('6 characters test', function (done) {
+    it('6 characters', function (done) {
         request(app)
-            .get('/api/v1/test?color=FFaFFFFd&type=testtype')
+            .get('/api/v1/test?color=ddaafffffd&type=testtype')
             .expect(400, {
                 status: 400,
                 message: 'The number of characters in the color value is not 6.',
@@ -35,19 +35,45 @@ describe('ApiTest', function (done) {
             }, done);
     });
 
-    it('Color value test', function (done) {
+    it('Color value', function (done) {
         request(app)
-            .get('/api/v1/test?color=FFFFFF&type=testtype')
+            .get('/api/v1/test?color=ffffff&type=testtype')
             .expect(200)
             .end(done);
     });
-
     it('R is out of value test', function (done) {
         request(app)
             .get('/api/v1/test?color=-1FFFF&type=testtype')
             .expect(400, {
                 status: 400,
                 message: 'The value of R is out of range.',
+                response: ''
+            }, done);
+    });
+    it('R is not number', function (done) {
+        request(app)
+            .get('/api/v1/test?color=gyffff&type=testtype')
+            .expect(400, {
+                status: 400,
+                message: 'R is NaN.',
+                response: ''
+            }, done);
+    });
+    it('G is not number', function (done) {
+        request(app)
+            .get('/api/v1/test?color=ffmqff&type=testtype')
+            .expect(400, {
+                status: 400,
+                message: 'G is NaN.',
+                response: ''
+            }, done);
+    });
+    it('B is not number', function (done) {
+        request(app)
+            .get('/api/v1/test?color=fffflo&type=testtype')
+            .expect(400, {
+                status: 400,
+                message: 'B is NaN.',
                 response: ''
             }, done);
     });
