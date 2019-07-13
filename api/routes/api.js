@@ -37,8 +37,8 @@ const checkColorValue = (color) => {
 
 router.get('/img', function (req, res, next) {
     const imgChanger = require('../../image_changer');
-    const [status, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
-    if (status == -1) {
+    const [imgSstatus, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
+    if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,
             message: result,
@@ -74,9 +74,8 @@ router.get('/test', function (req, res, next) {
         return;
     }
 
-
-    const [imgStatus, result] = imgChanger.imageChanger('./huku.PNG', 120, 242, 235);
-    if (imgStatus == -1) {
+    const [imgSstatus, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
+    if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,
             message: result,
