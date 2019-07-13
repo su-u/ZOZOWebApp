@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
     "test": "mocha --exit",
-    "run": "node ./ICS.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +19,11 @@
   "homepage": "https://github.com/su-u/ZOZOWebApp#readme",
   "devDependencies": {
     "expect": "^24.8.0",
-    "supertest": "^4.0.2",
-    "typescript": "^3.5.3"
+    "mocha": "^6.1.4",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
-    "@types/node": "^12.6.2",
     "canvas": "^2.5.0",
-    "express": "^4.17.1",
-    "mocha": "^6.1.4"
+    "express": "^4.17.1"
   }
 }
