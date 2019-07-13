@@ -1,12 +1,38 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const checkTypeValue = (type) => {
     if (type) {
-        return [1, ""];
+        return [1, '', type];
     } else {
-        return [-1, "type is empty."];
+        return [-1, 'type is empty.', ''];
     }
+}
+
+const checkColorValue = (color) => {
+    if (!color) {
+        return [-1, 'color is empty.', 0, 0, 0];
+    }
+
+    if (color.length != 6) {
+        return [-1, 'The number of characters in the color value is not 6.', 0, 0, 0];
+    }
+
+    const segments = color.match(/.{2}/g);
+    const r = parseInt(segments[0], 16);
+    const g = parseInt(segments[1], 16);
+    const b = parseInt(segments[2], 16);
+
+    if (r < 0 || r > 255) {
+        return [-1, 'The value of R is out of range.', 0, 0, 0];
+    }
+    if (g < 0 || g > 255) {
+        return [-1, 'The value of G is out of range.', 0, 0, 0];
+    }
+    if (g < 0 || g > 255) {
+        return [-1, 'The value of B is out of range.', 0, 0, 0];
+    }
+    return [1, '', r, g, b];
 }
 
 router.get('/img', function (req, res, next) {
@@ -28,49 +54,29 @@ router.get('/img', function (req, res, next) {
 router.get('/test', function (req, res, next) {
     const imgChanger = require('../../image_changer');
 
-    let type = '';
-    let color = '';
-
-    //空チェック
-    [status, message] = checkTypeValue(req.query.type);
-    if (status == -1) {
+    const [typeStatus, typeMessage, type] = checkTypeValue(req.query.type);
+    if (typeStatus == -1) {
         res.status(400).json({
             status: 400,
-            message: message,
+            message: typeMessage,
             response: ''
         });
         return;
     }
 
-    if (req.query.color) {
-        color = req.query.color;
-    } else {
+    const [colorStatus, colorMessage, r, g, b] = checkColorValue(req.query.color);
+    if (colorStatus == -1) {
         res.status(400).json({
             status: 400,
-            message: 'color is empt.',
+            message: colorMessage,
             response: ''
         });
         return;
     }
 
-    const is6characters = color.length == 6;
-    if (!is6characters) {
-        res.status(400).json({
-            status: 400,
-            message: 'The number of characters in the color value is not 6.',
-            response: ''
-        });
-        return;
-    }
 
-    const segments = color.match(/.{2}/g);
-    let r = segments[0];
-    let g = segments[1];
-    let b = segments[2];
-
-
-    const [status, result] = imgChanger.imageChanger('./huku.PNG', 120, 242, 235);
-    if (status == -1) {
+    const [imgStatus, result] = imgChanger.imageChanger('./huku.PNG', 120, 242, 235);
+    if (imgStatus == -1) {
         res.status(400).json({
             status: 400,
             message: result,
