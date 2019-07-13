@@ -1,6 +1,6 @@
 "use strict";
 
-const imgChanger = require('../image_changer.js')
+const imgChanger = require('../api/app/image_changer.js/index.js')
 const assert = require('assert')
 
 describe('ImageChangerTest', function () {

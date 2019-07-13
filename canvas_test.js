@@ -2,7 +2,7 @@
 var fs = require('fs');
 
 // 別途用意した画像を保存してくれるやつ
-var canvas_saver = require('./canvas_saver.js');
+var canvas_saver = require('./api/app/canvas_saver.js/index.js');
 
 // node-canvas
 var Canvas = require('canvas'),
