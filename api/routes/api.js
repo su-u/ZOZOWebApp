@@ -1,6 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+const checkTypeValue = (type) => {
+    if (type) {
+        return [1, ""];
+    } else {
+        return [-1, "type is empty."];
+    }
+}
+
 router.get('/img', function (req, res, next) {
     const imgChanger = require('../../image_changer');
     const [status, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
@@ -24,16 +32,16 @@ router.get('/test', function (req, res, next) {
     let color = '';
 
     //空チェック
-    if (req.query.type) {
-        type = req.query.type;
-    } else {
+    [status, message] = checkTypeValue(req.query.type);
+    if (status == -1) {
         res.status(400).json({
             status: 400,
-            message: 'type is empty.',
+            message: message,
             response: ''
         });
         return;
     }
+
     if (req.query.color) {
         color = req.query.color;
     } else {
