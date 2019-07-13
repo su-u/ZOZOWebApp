@@ -41,6 +41,8 @@ const checkColorValue = (color) => {
     if (b < 0 || b > 255) {
         return [-1, 'The value of B is out of range.', 0, 0, 0];
     }
+
+    //OK
     return [1, '', r, g, b];
 }
 

@@ -50,7 +50,7 @@ describe('ApiTest', function (done) {
                 response: ''
             }, done);
     });
-    it('R is not number', function (done) {
+    it('R is not a number', function (done) {
         request(app)
             .get('/api/v1/test?color=gyffff&type=testtype')
             .expect(400, {
@@ -59,7 +59,7 @@ describe('ApiTest', function (done) {
                 response: ''
             }, done);
     });
-    it('G is not number', function (done) {
+    it('G is not a number', function (done) {
         request(app)
             .get('/api/v1/test?color=ffmqff&type=testtype')
             .expect(400, {
@@ -68,7 +68,7 @@ describe('ApiTest', function (done) {
                 response: ''
             }, done);
     });
-    it('B is not number', function (done) {
+    it('B is not a number', function (done) {
         request(app)
             .get('/api/v1/test?color=fffflo&type=testtype')
             .expect(400, {
