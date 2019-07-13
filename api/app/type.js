@@ -10,12 +10,23 @@ const getTopsImg = (type) => {
 
 
 const getBottomsImg = (type) => {
+    const file = ['./img/IMG_0774_c.PNG', './img/IMG_0775_c.PNG'];
 
-
+    const path = file[type];
+    if (path == undefined) {
+        return -1;
+    }
+    return path;
 }
 
 const getShoesImg = (type) => {
+    const file = ['./img/IMG_0773_c.PNG'];
 
+    const path = file[type];
+    if (path == undefined) {
+        return -1;
+    }
+    return path;
 }
 
 module.exports.getTopsImg = getTopsImg;
