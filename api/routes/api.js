@@ -5,49 +5,54 @@ router.get('/img', function (req, res, next) {
     const imgChanger = require('../../image_changer');
     const [status, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
     if (status == -1) {
-        res.json({
+        res.status(400).json({
             status: 400,
             message: result,
-            response: ""
+            response: ''
         });
+        return;
     } else {
-        res.send('<img src="data:image/png;base64,' + result + '">');
+        res.status(200).send('<img src="data: image / png; base64, ' + result + '">');
+        return;
     }
 });
 
 router.get('/test', function (req, res, next) {
     const imgChanger = require('../../image_changer');
 
-    let type = "";
-    let color = "";
+    let type = '';
+    let color = '';
 
     //空チェック
     if (req.query.type) {
         type = req.query.type;
     } else {
-        res.json({
+        res.status(400).json({
             status: 400,
-            message: "type is empty.",
-            response: ""
+            message: 'type is empty.',
+            response: ''
         });
+        return;
     }
     if (req.query.color) {
         color = req.query.color;
     } else {
-        res.json({
+        res.status(400).json({
             status: 400,
-            message: "color is empt.",
-            response: ""
+            message: 'color is empt.',
+            response: ''
         });
+        return;
     }
 
     const is6characters = color.length == 6;
     if (!is6characters) {
-        res.json({
+        res.status(400).json({
             status: 400,
-            message: "The number of characters in the color value is not 6.",
-            response: ""
+            message: 'The number of characters in the color value is not 6.',
+            response: ''
         });
+        return;
     }
 
     const segments = color.match(/.{2}/g);
@@ -58,13 +63,15 @@ router.get('/test', function (req, res, next) {
 
     const [status, result] = imgChanger.imageChanger('./huku.PNG', 120, 242, 235);
     if (status == -1) {
-        res.json({
+        res.status(400).json({
             status: 400,
             message: result,
-            response: ""
+            response: ''
         });
+        return;
     } else {
-        res.send('<img src="data:image/png;base64,' + result + '">');
+        res.status(200).send('<img src="data: image / png; base64, ' + result + '">');
+        return;
     }
 });
 
