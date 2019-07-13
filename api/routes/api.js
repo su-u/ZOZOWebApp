@@ -48,7 +48,7 @@ const checkColorValue = (color) => {
 
 router.get('/img', function (req, res, next) {
     const imgChanger = require('../../image_changer');
-    const [imgSstatus, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
+    const [imgSstatus, result] = imgChanger.imageChanger('./IMG_0769 - コピー.PNG', 50, 50, 40);
     if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,
