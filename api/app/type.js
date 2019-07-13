@@ -1,12 +1,12 @@
-const topsType = (type) => {
+const topsImg = (type) => {
 
 }
 
-const bottomsType = (type) => {
+const bottomsImg = (type) => {
 
 
 }
 
-const shoesType = (type) => {
+const shoesImg = (type) => {
 
 }
