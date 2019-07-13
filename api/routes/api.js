@@ -4,7 +4,7 @@ const checkColorValue = require('../app/checkColorValue');
 const checkTypeValue = require('../app/checkTypeValue');
 
 router.get('/img', function (req, res, next) {
-    const imgChanger = require('../../image_changer');
+    const imgChanger = require('../app/image_changer');
     const [imgSstatus, result] = imgChanger.imageChanger('./IMG_0769_c.PNG', 50, 50, 40);
     if (imgSstatus == -1) {
         res.status(400).json({
@@ -20,7 +20,7 @@ router.get('/img', function (req, res, next) {
 });
 
 router.get('/test', function (req, res, next) {
-    const imgChanger = require('../../image_changer');
+    const imgChanger = require('../app/image_changer');
 
     const [typeStatus, typeMessage, type] = checkTypeValue(req.query.type);
     if (typeStatus == -1) {
