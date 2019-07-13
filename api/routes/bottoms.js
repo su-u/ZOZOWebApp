@@ -26,7 +26,7 @@ router.get('/bottoms', function (req, res, next) {
         return;
     }
 
-    const [imgSstatus, result] = imgChanger.imageChanger('./IMG_0774_c.PNG', r, g, b);
+    const [imgSstatus, result] = imgChanger.imageChanger('./img/IMG_0774_c.PNG', r, g, b);
     if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,

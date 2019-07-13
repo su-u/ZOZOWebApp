@@ -1,6 +1,6 @@
 module.exports.imageChanger = (function (filename, color_r, color_g, color_b, color_a = 1) {
     const fs = require('fs');
-    const canvas_saver = require('./canvas_saver.js/index.js');
+    const canvas_saver = require('./canvas_saver');
     const Canvas = require('canvas'),
         Image = Canvas.Image;
 
