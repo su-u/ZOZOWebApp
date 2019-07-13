@@ -100,3 +100,41 @@ describe('getTopsImgPath', function () {
         assert.equal(-1, path);
     });
 });
+
+describe('getBottomsImg', function () {
+    const getBottomsImg = require('../api/app/type').getBottomsImg;
+
+    it('0', function () {
+        const path = getBottomsImg(0);
+        assert.equal('./img/IMG_0774_c.PNG', path);
+    });
+    it('1', function () {
+        const path = getBottomsImg(1);
+        assert.equal('./img/IMG_0775_c.PNG', path);
+    });
+    it('-1', function () {
+        const path = getBottomsImg(-1);
+        assert.equal(-1, path);
+    });
+    it('3', function () {
+        const path = getBottomsImg(2);
+        assert.equal(-1, path);
+    });
+});
+
+describe('getShoesImg', function () {
+    const getShoesImg = require('../api/app/type').getShoesImg;
+
+    it('0', function () {
+        const path = getShoesImg(0);
+        assert.equal('./img/IMG_0773_c.PNG', path);
+    });
+    it('-1', function () {
+        const path = getShoesImg(-1);
+        assert.equal(-1, path);
+    });
+    it('3', function () {
+        const path = getShoesImg(2);
+        assert.equal(-1, path);
+    });
+});
