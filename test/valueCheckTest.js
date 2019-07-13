@@ -75,3 +75,28 @@ describe('checkColorValueTest', function () {
         assert.equal(0, b);
     });
 });
+
+describe('getTopsImgPath', function () {
+    const getTopsImg = require('../api/app/type').getTopsImg;
+
+    it('0', function () {
+        const path = getTopsImg(0);
+        assert.equal('./img/IMG_0771_c.PNG', path);
+    });
+    it('1', function () {
+        const path = getTopsImg(1);
+        assert.equal('./img/IMG_0776_c.PNG', path);
+    });
+    it('2', function () {
+        const path = getTopsImg(2);
+        assert.equal('./img/IMG_0769_c.PNG', path);
+    });
+    it('-1', function () {
+        const path = getTopsImg(-1);
+        assert.equal(-1, path);
+    });
+    it('3', function () {
+        const path = getTopsImg(3);
+        assert.equal(-1, path);
+    });
+});
