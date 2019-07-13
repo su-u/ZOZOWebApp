@@ -15,7 +15,11 @@ app.set('view engine', 'pug');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 app.use('/api/v1', require('./routes/api.js'));
+app.use('/api/v1', require('./routes/tops.js'));
+app.use('/api/v1', require('./routes/bottoms.js'));
+app.use('/api/v1', require('./routes/shoes.js'));
 
 app.use(logger('dev'));
 app.use(express.json());
