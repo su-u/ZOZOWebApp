@@ -4,16 +4,8 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     const Canvas = require('canvas'),
         Image = Canvas.Image;
 
-    const checkColor = function (color) {
-        return color >= 0 && color < 255;
-    }
-
     const convert_toBase64 = function (data) {
         return data.toDataURL().split(',')[1];
-    }
-
-    if (!checkColor(color_r) || !checkColor(color_g) || !checkColor(color_b)) {
-        return [-1, "Invalid color value."];
     }
 
     let data;

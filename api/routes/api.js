@@ -23,13 +23,22 @@ const checkColorValue = (color) => {
     const g = parseInt(segments[1], 16);
     const b = parseInt(segments[2], 16);
 
+    if (isNaN(r)) {
+        return [-1, 'R is NaN.', 0, 0, 0];
+    }
     if (r < 0 || r > 255) {
         return [-1, 'The value of R is out of range.', 0, 0, 0];
+    }
+    if (isNaN(g)) {
+        return [-1, 'G is NaN.', 0, 0, 0];
     }
     if (g < 0 || g > 255) {
         return [-1, 'The value of G is out of range.', 0, 0, 0];
     }
-    if (g < 0 || g > 255) {
+    if (isNaN(b)) {
+        return [-1, 'B is NaN.', 0, 0, 0];
+    }
+    if (b < 0 || b > 255) {
         return [-1, 'The value of B is out of range.', 0, 0, 0];
     }
     return [1, '', r, g, b];
@@ -74,7 +83,7 @@ router.get('/test', function (req, res, next) {
         return;
     }
 
-    const [imgSstatus, result] = imgChanger.imageChanger('./huku.PNG', 245, 242, 235);
+    const [imgSstatus, result] = imgChanger.imageChanger('./huku.PNG', r, g, b);
     if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,
