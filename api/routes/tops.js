@@ -35,7 +35,7 @@ router.get('/tops', function (req, res, next) {
         });
         return;
     } else {
-        res.status(200).send('<img src="data: image / png; base64, ' + result + '">');
+        res.status(200).send('data: image / png; base64, ' + result);
         return;
     }
 });
