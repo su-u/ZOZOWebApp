@@ -18,7 +18,7 @@ const apitest = (path) => {
         });
         it('Not 6 characters', function (done) {
             request(app)
-                .get(path + '?color=ddaafffffd&type=testtype')
+                .get(path + '?color=ddaafffffd&type=0')
                 .expect(400, {
                     status: 400,
                     message: 'The number of characters in the color value is not 6.',
@@ -27,13 +27,13 @@ const apitest = (path) => {
         });
         it('Color value', function (done) {
             request(app)
-                .get(path + '?color=ffffff&type=testtype')
+                .get(path + '?color=ffffff&type=0')
                 .expect(200)
                 .end(done);
         });
         it('R is out of value test', function (done) {
             request(app)
-                .get(path + '?color=-1FFFF&type=testtype')
+                .get(path + '?color=-1FFFF&type=0')
                 .expect(400, {
                     status: 400,
                     message: 'The value of R is out of range.',
@@ -42,7 +42,7 @@ const apitest = (path) => {
         });
         it('R is not a number', function (done) {
             request(app)
-                .get(path + '?color=gyffff&type=testtype')
+                .get(path + '?color=gyffff&type=0')
                 .expect(400, {
                     status: 400,
                     message: 'R is NaN.',
@@ -51,7 +51,7 @@ const apitest = (path) => {
         });
         it('G is not a number', function (done) {
             request(app)
-                .get(path + '?color=ffmqff&type=testtype')
+                .get(path + '?color=ffmqff&type=0')
                 .expect(400, {
                     status: 400,
                     message: 'G is NaN.',
@@ -60,7 +60,7 @@ const apitest = (path) => {
         });
         it('B is not a number', function (done) {
             request(app)
-                .get(path + '?color=fffflo&type=testtype')
+                .get(path + '?color=fffflo&type=0')
                 .expect(400, {
                     status: 400,
                     message: 'B is NaN.',
