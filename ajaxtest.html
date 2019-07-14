@@ -7,20 +7,26 @@
 </head>
 
 <body>
-    <form>
+    <form id="form">
         <div>
-            <label for="keyword">キーワード：</label>
-            <input id="keyword" type="text" size="20" />
+            <label for="keyword">カラー：</label>
+            <input id="keyword" type="text" size="20" name="color" value="ff00ff" />
+            <label for="keyword">タイプ：</label>
+            <input id="type" type="text" size="20" name="type" value="0" />
             <input id="search" type="button" value="検索" />
         </div>
         <ul id="result" class="ajax"></ul>
     </form>
+    <img id="tops">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(function () {
             // ［検索］ボタンクリックで検索開始
             $('#search').click(function () {
-                fetch('http://localhost:3000/api/v1/tops?color=5ff00c&type=testtype')
+                let formData = new FormData(document.getElementById('form'));
+                let params = new URLSearchParams(formData);
+                fetch('http://localhost:3000/api/v1/tops?' + params.toString())
                     .then(response => {
                         return response.text();
                     })
@@ -32,7 +38,6 @@
             });
         });
     </script>
-    <img id="tops">
 </body>
 
 </html>
