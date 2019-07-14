@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const checkColorValue = require('../app/checkColorValue');
-const checkTypeValue = require('../app/checkTypeValue');
+const checkTypeValue = require('../app/type').getTopsImg;
 
 router.get('/tops', function (req, res, next) {
     const imgChanger = require('../app/image_changer');
 
-    const [typeStatus, typeMessage, type] = checkTypeValue(req.query.type);
+    const [typeStatus, typeMessage, imgPath] = checkTypeValue(req.query.type);
     if (typeStatus == -1) {
         res.status(400).json({
             status: 400,
@@ -26,7 +26,7 @@ router.get('/tops', function (req, res, next) {
         return;
     }
 
-    const [imgSstatus, result] = imgChanger.imageChanger('./img/IMG_0771_c.PNG', r, g, b);
+    const [imgSstatus, result] = imgChanger.imageChanger(imgPath, r, g, b);
     if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,

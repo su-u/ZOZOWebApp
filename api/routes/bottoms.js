@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const checkColorValue = require('../app/checkColorValue');
-const checkTypeValue = require('../app/checkTypeValue');
+const checkTypeValue = require('../app/type').getBottomsImg;
 
 router.get('/bottoms', function (req, res, next) {
     const imgChanger = require('../app/image_changer');
 
-    const [typeStatus, typeMessage, type] = checkTypeValue(req.query.type);
+    const [typeStatus, typeMessage, imgPath] = checkTypeValue(req.query.type);
     if (typeStatus == -1) {
         res.status(400).json({
             status: 400,
@@ -26,7 +26,7 @@ router.get('/bottoms', function (req, res, next) {
         return;
     }
 
-    const [imgSstatus, result] = imgChanger.imageChanger('./img/IMG_0774_c.PNG', r, g, b);
+    const [imgSstatus, result] = imgChanger.imageChanger(imgPath, r, g, b);
     if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,
@@ -35,7 +35,7 @@ router.get('/bottoms', function (req, res, next) {
         });
         return;
     } else {
-        res.status(200).send('<img src="data: image / png; base64, ' + result + '">');
+        res.status(200).send('data: image / png; base64, ' + result);
         return;
     }
 });
