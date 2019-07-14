@@ -20,16 +20,19 @@
         $(function () {
             // ［検索］ボタンクリックで検索開始
             $('#search').click(function () {
-                fetch('http://localhost:3000/api/v1/tops?color=56fffc&type=testtype')
+                fetch('http://localhost:3000/api/v1/tops?color=5ff00c&type=testtype')
                     .then(response => {
                         return response.text();
                     })
                     .then(body => {
-                        document.body.innerHTML = body;
+                        var elem = document.getElementById("tops");
+                        elem.src = body;
+                        console.log(body);
                     });
             });
         });
     </script>
+    <img id="tops">
 </body>
 
 </html>
