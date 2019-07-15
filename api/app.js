@@ -52,4 +52,8 @@ app.use(function (err, req, res, next) {
 });
 
 
+// var server = app.listen(3000, function () {
+//     console.log("Node.js is listening to PORT:" + server.address().port);
+// });
+
 module.exports = app;
