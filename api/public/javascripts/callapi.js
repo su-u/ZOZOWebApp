@@ -47,7 +47,6 @@ pickr.on('save', (color, instance) => {
 });
 
 $(function () {
-    // ［検索］ボタンクリックで検索開始
     $('#tops-api').click(function () {
         const formData = new FormData(document.getElementById('form-tops'));
         const params = new URLSearchParams(formData);
