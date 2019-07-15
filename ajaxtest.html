@@ -22,36 +22,39 @@
 
 <body>
     <div class="wrapper-img">
-        <img id="tops-img" class="img">
-        <img id="bottoms-img" class="img">
-        <img id="shoes-img" class="img">
+        <img id="tops-img" class="img" src="default-tops.png">
+        <img id="bottoms-img" class="img" src="./default-bottoms.png">
+        <img id="shoes-img" class="img" src="./default-shoes.png">
     </div> 
     <div class="form">
+        <h3>トップス</h3>
         <form id="form-tops">
             <div>
                 <label for="keyword">カラー：</label>
                 <input id="keyword" type="text" size="20" name="color" value="ff00ff" />
                 <label for="keyword">タイプ：</label>
                 <input id="type" type="text" size="20" name="type" value="0" />
-                <input id="tops-api" type="button" value="検索" />
+                <input id="tops-api" type="button" value="更新" />
             </div>
         </form>
+        <h3>ボトムス</h3>
         <form id="form-bottoms">
                 <div>
                     <label for="keyword">カラー：</label>
                     <input id="keyword" type="text" size="20" name="color" value="ff00ff" />
                     <label for="keyword">タイプ：</label>
                     <input id="type" type="text" size="20" name="type" value="0" />
-                    <input id="bottoms-api" type="button" value="検索" />
+                    <input id="bottoms-api" type="button" value="更新" />
                 </div>
             </form>
+            <h3>シューズ</h3>
             <form id="form-shoes">
                     <div>
                         <label for="keyword">カラー：</label>
                         <input id="keyword" type="text" size="20" name="color" value="ff00ff" />
                         <label for="keyword">タイプ：</label>
                         <input id="type" type="text" size="20" name="type" value="0" />
-                        <input id="shoes-api" type="button" value="検索" />
+                        <input id="shoes-api" type="button" value="更新" />
                     </div>
                 </form>
     </div>
