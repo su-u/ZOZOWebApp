@@ -4,37 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <title>jQuery TIPS</title>
-    <style>
-    img {
-        display: block;
-    }
-    .container{
-        display: flex;
-        /* flex-direction: row; */
-        margin: 0 auto;
-        justify-content: center;
-    }
-    .form{
-        height: 300px;
-        box-shadow: 0px 3px 10px rgba(0,0,0,.8);
-        margin: 20px 50px;
-        padding: 20px 30px;
-    }
-    .wrapper-img{
-        margin: 0 50px;
-    }
-    .img{
-        width: 300px;
-    }
-    </style>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="wrapper-img">
-            <img id="tops-img" class="img" src="default-tops.png">
-            <img id="bottoms-img" class="img" src="./default-bottoms.png">
-            <img id="shoes-img" class="img" src="./default-shoes.png">
+            <img id="tops-img" class="img" src="./images/default-tops.png">
+            <img id="bottoms-img" class="img" src="./images/default-bottoms.png">
+            <img id="shoes-img" class="img" src="./images/default-shoes.png">
         </div> 
         <div class="form">
             <h3>トップス</h3>
@@ -72,50 +50,7 @@
  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-        $(function () {
-            // ［検索］ボタンクリックで検索開始
-            $('#tops-api').click(function () {
-                const formData = new FormData(document.getElementById('form-tops'));
-                const params = new URLSearchParams(formData);
-                fetch('http://localhost:3000/api/v1/tops?' + params.toString())
-                    .then(response => {
-                        return response.text();
-                    })
-                    .then(body => {
-                        var elem = document.getElementById("tops-img");
-                        elem.src = body;
-                        console.log(body);
-                    });
-            });
-            $('#bottoms-api').click(function () {
-                const formData = new FormData(document.getElementById('form-bottoms'));
-                const params = new URLSearchParams(formData);
-                fetch('http://localhost:3000/api/v1/bottoms?' + params.toString())
-                    .then(response => {
-                        return response.text();
-                    })
-                    .then(body => {
-                        var elem = document.getElementById("bottoms-img");
-                        elem.src = body;
-                        console.log(body);
-                    });
-            });
-            $('#shoes-api').click(function () {
-                const formData = new FormData(document.getElementById('form-shoes'));
-                const params = new URLSearchParams(formData);
-                fetch('http://localhost:3000/api/v1/shoes?' + params.toString())
-                    .then(response => {
-                        return response.text();
-                    })
-                    .then(body => {
-                        var elem = document.getElementById("shoes-img");
-                        elem.src = body;
-                        console.log(body);
-                    });
-            });
-        });
-    </script>
+    <script src="/javascripts/callapi.js"></script>
 </body>
 
 </html>
