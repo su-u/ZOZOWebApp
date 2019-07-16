@@ -1,5 +1,4 @@
-const createPickr = (elementId) =>
-{
+const createPickr = (elementId) => {
     return Pickr.create({
         el: elementId,
         theme: 'nano',
@@ -24,7 +23,7 @@ const setColorValue = (elemetId, colorString) => {
     document.getElementById(elemetId).value = colorString.replace('#', '');
 }
 
-const callApi = (callUrl, formElementId, imgElementId) =>{
+const callApi = (callUrl, formElementId, imgElementId) => {
     const formData = new FormData(document.getElementById(formElementId));
     const params = new URLSearchParams(formData);
     fetch(callUrl + params.toString())
@@ -40,7 +39,7 @@ const callApi = (callUrl, formElementId, imgElementId) =>{
 
 //tops
 const topsElementId = 'tops-color'
-const topsPicker = createPickr('.' + topsElementId+ '-picker');
+const topsPicker = createPickr('#' + topsElementId + '-picker');
 
 topsPicker.on('save', (color, instance) => {
     setColorValue('tops-color', color.toHEXA().toString());
@@ -50,7 +49,7 @@ topsPicker.on('save', (color, instance) => {
 
 //bottoms
 const bottomsElementId = 'bottoms-color'
-const bottomsPicker = createPickr('.bottoms-color-picker');
+const bottomsPicker = createPickr('#' + bottomsElementId + '-picker');
 
 bottomsPicker.on('save', (color, instance) => {
     setColorValue(bottomsElementId, color.toHEXA().toString());
@@ -60,7 +59,7 @@ bottomsPicker.on('save', (color, instance) => {
 
 //shoes
 const shoesElementId = 'shoes-color'
-const shoesPicker = createPickr('.' + bottomsElementId + '-picker');
+const shoesPicker = createPickr('#' + shoesElementId + '-picker');
 
 shoesPicker.on('save', (color, instance) => {
     setColorValue(shoesElementId, color.toHEXA().toString());
