@@ -20,16 +20,9 @@ const createPickr = (elementId) =>
     });
 }
 
-const pickr = createPickr('.bottoms-color-picker');
-
-pickr.on('save', (color, instance) => {
-    console.log('save', color, instance);
-    document.getElementById('bottoms-color').value = color.toHEXA().toString().replace('#', '');
-}).on('change', (color, instance) => {
-    console.log('change', color, instance);
-    document.getElementById('bottoms-color').value = color.toHEXA().toString().replace('#', '');
-});
-
+const setColorValue = (elemetId, colorString) => {
+    document.getElementById(elemetId).value = colorString.replace('#', '');
+}
 
 const callApi = (callUrl, formElementId, imgElementId) =>{
     const formData = new FormData(document.getElementById(formElementId));
@@ -44,6 +37,36 @@ const callApi = (callUrl, formElementId, imgElementId) =>{
             console.log(body);
         });
 }
+
+//tops
+const topsElementId = 'tops-color'
+const topsPicker = createPickr('.' + topsElementId+ '-picker');
+
+topsPicker.on('save', (color, instance) => {
+    setColorValue('tops-color', color.toHEXA().toString());
+}).on('change', (color, instance) => {
+    setColorValue('tops-color', color.toHEXA().toString());
+});
+
+//bottoms
+const bottomsElementId = 'bottoms-color'
+const bottomsPicker = createPickr('.bottoms-color-picker');
+
+bottomsPicker.on('save', (color, instance) => {
+    setColorValue(bottomsElementId, color.toHEXA().toString());
+}).on('change', (color, instance) => {
+    setColorValue(bottomsElementId, color.toHEXA().toString());
+});
+
+//shoes
+const shoesElementId = 'shoes-color'
+const shoesPicker = createPickr('.' + bottomsElementId + '-picker');
+
+shoesPicker.on('save', (color, instance) => {
+    setColorValue(shoesElementId, color.toHEXA().toString());
+}).on('change', (color, instance) => {
+    setColorValue(shoesElementId, color.toHEXA().toString());
+});
 
 $(function () {
     $('#tops-api').click(function () {
