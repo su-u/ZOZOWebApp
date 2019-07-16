@@ -51,7 +51,11 @@ router.get('/test', function (req, res, next) {
         });
         return;
     } else {
-        res.status(200).send('<img src="data: image / png; base64, ' + result + '">');
+        res.status(200).json({
+            status: 200,
+            message: '',
+            response: 'data: image / png; base64,' + result
+        });
         return;
     }
 });
