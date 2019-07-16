@@ -3,25 +3,31 @@ body{
     background-color: #cfe9ff;
     font-size: 20px;
 }
-.position-relative{
-    position: relative!important;
-}
 .top-header {
     top: 0;
     width: 100%;
     background-color: #202124;
     height: 80px;
     color:white;
+    display: flex;
 }
-.top-header .title {
+.top-header .title, .git-icon{
     padding-left: 30px;
     padding-top:20px;
     font-weight:600;
     font-size:30px;
 }
-.title a{
-    color:white;
-    text-decoration:none;
+.git-icon{
+    color: #fff;
+    padding-left: 0;
+    padding-right: 10px;
+}
+.top-header div:last-child{
+    margin-left: auto;
+}
+
+.octicon{
+    fill: currentColor;
 }
 
 .pcr-button{
@@ -40,7 +46,7 @@ img {
 }
 .container{
     display: flex;
-    margin: 10px; auto;
+    margin: 10px auto;
     justify-content: center;
         background-color: #fff;
     box-shadow: 0px 3px 10px rgba(0,0,0,.8);
