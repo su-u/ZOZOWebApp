@@ -1,6 +1,6 @@
 body{
     padding-top: 20px;
-    background-color: #ffe6fa;
+    background-color: #cfe9ff;
     font-size: 20px;
 }
 .pcr-button{
@@ -19,9 +19,12 @@ img {
 }
 .container{
     display: flex;
-    /* flex-direction: row; */
     margin: 0 auto;
     justify-content: center;
+        background-color: #fff;
+    box-shadow: 0px 3px 10px rgba(0,0,0,.8);
+    border-radius: 10px;
+    padding: 30px 0;
 }
 
 @media screen and (max-width: 960px) {
@@ -90,5 +93,5 @@ img {
     text-indent: .01px;
     padding: 10px;
     height: 40px;
-    width: 230px;
+    width: 200px;
     }
