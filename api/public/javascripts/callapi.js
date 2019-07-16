@@ -32,8 +32,9 @@ const callApi = (callUrl, formElementId, imgElementId) => {
         })
         .then(body => {
             var elem = document.getElementById(imgElementId);
-            elem.src = body;
             console.log(body);
+            responseJson = JSON.parse(body);
+            elem.src = responseJson.response;
         });
 }
 
