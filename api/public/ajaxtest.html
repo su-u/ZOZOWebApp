@@ -18,7 +18,7 @@
         </div>
         <div class="form">
             <h3>トップス</h3>
-            <form id="form-tops">
+            <form id="tops-form">
                 <div>
                     <label for="tops-color">カラー：</label>
                     <input id="tops-color" type="text" size="20" name="color" value="ff00ff" />
@@ -29,19 +29,22 @@
                 </div>
             </form>
             <h3>ボトムス</h3>
-            <form id="form-bottoms">
+            <form id="bottoms-form">
                 <div>
                     <label for="bottoms-color">カラー：</label>
                     <input id="bottoms-color" type="text" size="20" name="color" value="ff00ff" />
-                    <div class="color-picker" id="bottoms-p"></div>
+                    <div class="bottoms-color-picker" id="bottoms-p"></div>
 
                     <label for="bottoms-type">タイプ：</label>
-                    <input id="bottoms-type" type="text" size="20" name="type" value="0" />
+                    <select name="type">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            </select>
                     <input id="bottoms-api" type="button" value="更新" />
                 </div>
             </form>
             <h3>シューズ</h3>
-            <form id="form-shoes">
+            <form id="shoes-form">
                 <div>
                     <label for="shoes-color">カラー：</label>
                     <input id="shoes-color" type="text" size="20" name="color" value="ff00ff" />
@@ -56,6 +59,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/javascripts/pickr.js"></script>
     <script src="/javascripts/callapi.js"></script>
 </body>
 
