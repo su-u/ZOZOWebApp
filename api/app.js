@@ -32,14 +32,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    next(createError(404));
+    res.status(404).send('Not Found');
+    // next(createError(404));
 });
 
 // error handler
 app.use(function (err, req, res, next) {
     res.locals.message = err.message;
     console.error(err.stack);
-    res.render('error');
+    res.status(404).render('error');
 });
 
 
