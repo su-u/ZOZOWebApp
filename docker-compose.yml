@@ -1,11 +1,13 @@
 version: '3'
 services:
   webserver:
-    build: node
+    build: ./
     image: node-express-dev:1.0
     container_name: node
     working_dir: /home/node
     tty: true
+    environment:
+        - NODE_ENV=production
     volumes:
       - ./:/home/node
     ports:
