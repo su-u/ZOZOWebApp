@@ -1,8 +1,29 @@
 body{
-    padding-top: 20px;
+    margin: 0;
     background-color: #cfe9ff;
     font-size: 20px;
 }
+.position-relative{
+    position: relative!important;
+}
+.top-header {
+    top: 0;
+    width: 100%;
+    background-color: #202124;
+    height: 80px;
+    color:white;
+}
+.top-header .title {
+    padding-left: 30px;
+    padding-top:20px;
+    font-weight:600;
+    font-size:30px;
+}
+.title a{
+    color:white;
+    text-decoration:none;
+}
+
 .pcr-button{
     margin-left: 7px;
 }
@@ -19,7 +40,7 @@ img {
 }
 .container{
     display: flex;
-    margin: 0 auto;
+    margin: 10px; auto;
     justify-content: center;
         background-color: #fff;
     box-shadow: 0px 3px 10px rgba(0,0,0,.8);
