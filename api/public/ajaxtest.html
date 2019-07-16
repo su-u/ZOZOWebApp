@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>jQuery TIPS</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" /> -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -17,55 +17,69 @@
             <img id="shoes-img" class="img" src="./images/default-shoes.png">
         </div>
         <div class="form">
-            <h3>トップス</h3>
-            <form id="tops-form">
-                <div>
+            <div class="wrapper-form">
+                <h3>トップス</h3>
+                <form id="tops-form">
                     <div class="wrapper-color">
                         <label for="tops-color">カラー：</label>
                         <input id="tops-color" type="hidden" size="20" name="color" value="ff00ff" />
                         <div id="tops-color-picker"></div>
                     </div>
-                    <label for="tops-type">タイプ：</label>
-                    <input id="tops-type" type="text" size="20" name="type" value="0" />
-                    <input id="tops-api" type="button" value="更新" />
-                </div>
-            </form>
-            <h3>ボトムス</h3>
-            <form id="bottoms-form">
-                <div>
+                    <div class="pulldown">
+                        <label for="tops-type">タイプ：</label>
+                        <select name="type">
+                            <option value="0">無地</option>
+                            <option value="1">1</option>
+                            <option value="2">ボーダー</option>
+                        </select>
+                    </div>
+                    <input id="tops-api" type="button" value="更新" class="button" />
+
+                </form>
+            </div>
+            <div class="wrapper-form">
+                <h3>ボトムス</h3>
+                <form id="bottoms-form">
                     <div class="wrapper-color">
                         <label for="bottoms-color">カラー：</label>
                         <input id="bottoms-color" type="hidden" size="20" name="color" value="ff00ff" />
                         <div id="bottoms-color-picker"></div>
                     </div>
 
-                    <label for="bottoms-type">タイプ：</label>
-                    <select name="type">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                    </select>
-                    <input id="bottoms-api" type="button" value="更新" />
-                </div>
-            </form>
-            <h3>シューズ</h3>
-            <form id="shoes-form">
-                <div>
+                    <div class="pulldown">
+                        <label for="bottoms-type">タイプ：</label>
+                        <select name="type">
+                            <option value="0">ズボン</option>
+                            <option value="1">スカート</option>
+                        </select>
+                    </div>
+                    <input id="bottoms-api" type="button" value="更新" class="button" />
+                </form>
+            </div>
+            <div class="wrapper-form">
+                <h3>シューズ</h3>
+                <form id="shoes-form">
                     <div class="wrapper-color">
                         <label for="shoes-color">カラー：</label>
                         <input id="shoes-color" type="hidden" size="20" name="color" value="ff00ff" />
                         <div id="shoes-color-picker"></div>
                     </div>
 
-                    <label for="shoes-type">タイプ：</label>
-                    <input id="shoes-type" type="text" size="20" name="type" value="0" />
-                    <input id="shoes-api" type="button" value="更新" />
-                </div>
-            </form>
+                    <div class="pulldown">
+                        <label for="shoes-type">タイプ：</label>
+                        <select name="type">
+                            <option value="0">0</option>
+                        </select>
+                    </div>
+                    <input id="shoes-api" type="button" value="更新" class="button" />
+                </form>
+            </div>
         </div>
     </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="/javascripts/callapi.js"></script>
 </body>
 
