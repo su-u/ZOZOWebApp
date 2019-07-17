@@ -30,4 +30,13 @@ describe('Calltest', function (done) {
                 response: ''
             }, done);
     });
+    it('/wiaiiaaiai/djwodw', function (done) {
+        request(app)
+            .get('/wiaiiaaiai/djwodw')
+            .expect(404, {
+                status: 404,
+                message: 'Not Found',
+                response: ''
+            }, done);
+    });
 });
