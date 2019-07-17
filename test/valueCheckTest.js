@@ -74,7 +74,7 @@ describe('getTopsImgPath', function () {
         const [typeStatus, typeMessage, imgPath] = getTopsImg(1);
         assert.equal(1, typeStatus);
         assert.equal('', typeMessage);
-        assert.equal('./img/IMG_0776_c.PNG', imgPath);
+        assert.equal('./img/IMG_0837_c.PNG', imgPath);
     });
     it('2', function () {
         const [typeStatus, typeMessage, imgPath] = getTopsImg(2);
@@ -82,14 +82,20 @@ describe('getTopsImgPath', function () {
         assert.equal('', typeMessage);
         assert.equal('./img/IMG_0769_c.PNG', imgPath);
     });
+    it('３', function () {
+        const [typeStatus, typeMessage, imgPath] = getTopsImg(3);
+        assert.equal(1, typeStatus);
+        assert.equal('', typeMessage);
+        assert.equal('./img/IMG_0838_c.PNG', imgPath);
+    });
     it('-1', function () {
         const [typeStatus, typeMessage, imgPath] = getTopsImg(-1);
         assert.equal(-1, typeStatus);
         assert.equal('type is out of range.', typeMessage);
         assert.equal('', imgPath);
     });
-    it('3', function () {
-        const [typeStatus, typeMessage, imgPath] = getTopsImg(3);
+    it('4', function () {
+        const [typeStatus, typeMessage, imgPath] = getTopsImg(4);
         assert.equal(-1, typeStatus);
         assert.equal('type is out of range.', typeMessage);
         assert.equal('', imgPath);
