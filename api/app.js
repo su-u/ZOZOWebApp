@@ -18,7 +18,8 @@ app.use(function (req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
+const helmet = require('helmet')
+app.use(helmet())
 app.use('/api/v1', require('./routes/tops.js'));
 app.use('/api/v1', require('./routes/bottoms.js'));
 app.use('/api/v1', require('./routes/shoes.js'));
