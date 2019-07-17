@@ -13,7 +13,7 @@
 1. コマンド実行
     - Windows PowerShell  
       `cd /ZOZOWebApp;npm i;`  
-      `cd ./api;npm i;`
+      `cd ./api;npm i`
     - Windows cmd  
       `cd /ZOZOWebApp&npm i`  
       `cd ./api&npm i`
