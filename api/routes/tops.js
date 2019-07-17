@@ -26,7 +26,7 @@ router.get('/tops', function (req, res, next) {
         return;
     }
 
-    const [imgSstatus, result] = imgChanger.imageChanger(imgPath, r, g, b);
+    const [imgSstatus, result] = imgChanger(imgPath, r, g, b);
     if (imgSstatus == -1) {
         res.status(400).json({
             status: 400,
