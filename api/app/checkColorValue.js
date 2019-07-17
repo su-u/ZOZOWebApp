@@ -1,14 +1,24 @@
 /**
+ * レスポンスデータの生成
+ * 生成ミス削減の為
+ * @param {*} statuCode ステータスコード
+ * @param {*} message メッセージ
+ * @param {*} r R値
+ * @param {*} g G値
+ * @param {*} b B値
+ * @returns
+ */
+const CreateResponse = (statuCode, message, r, g, b) =>{
+    return [statuCode, message, r, g, b];
+}
+
+/**
  * カラーコードを受け取り、r,g,b値を返す。
  * 問題がある場合は、エラーメッセージを返す。
  * @param {*} color 処理するカラーコード
  * @returns [値に対するステータスコード, メッセージ, R値, G値, B値]
  */
 const checkColorValue = (color) => {
-    const CreateResponse = (statuCode, message, r, g, b) =>{
-        return [statuCode, message, r, g, b];
-    }
-
     if (!color) {
         return CreateResponse(-1, 'color is empty.', 0, 0, 0);
     }
