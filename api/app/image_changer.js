@@ -4,6 +4,10 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     const Canvas = require('canvas'),
         Image = Canvas.Image;
 
+    const CreateResponse = (statusCode, response) =>{
+        return [statusCode, response]
+    }
+
     const convert_toBase64 = function (data) {
         return data.toDataURL().split(',')[1];
     }
@@ -12,7 +16,7 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     try {
         data = fs.readFileSync(__dirname + '/' + filename);
     } catch (error) {
-        return [-1, error];
+        return CreateResponse(-1, error);
     }
 
     const img = new Image;
@@ -38,5 +42,6 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     // canvas_saver.save(canvas, "huku4.png", function () {
     //     console.log("img saved");
     // });
-    return [1, Buffer.from(convert_toBase64(canvas), 'base64').toString("base64")];
+
+    return CreateResponse(1, Buffer.from(convert_toBase64(canvas), 'base64').toString("base64"));
 });
