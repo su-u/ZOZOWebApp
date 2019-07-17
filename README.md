@@ -5,13 +5,14 @@
 ## 開発環境の構築手順
 1. node.jsのインストール。  
     [ダウンロード | Node.js](https://nodejs.org/ja/download/)
-1. pakageのインストール
+    10.16.0を使用して開発。
+1. コマンド実行
     - Windows PoweShell  
-      `git clone https://github.com/su-u/ZOZOWebApp.git;cd ./ZOZOWebApp;npm i;cd ./api;npm i;`
+      `cd /ZOZOWebApp;npm i;cd ./api;npm i;`
     - Windows cmd  
-      `git clone https://github.com/su-u/ZOZOWebApp.git&cd ./ZOZOWebApp&npm i&cd ./api&npm i`
+      `cd /ZOZOWebApp&npm i&cd ./api&npm i`
     - Linux  
-      `git clone https://github.com/su-u/ZOZOWebApp.git && cd ./ZOZOWebApp && npm i && cd ./api && npm i`
+      `cd /ZOZOWebApp && npm i && cd ./api && npm i`
 
 ## Webサーバー実行手順
 1. `cd /ZOZOWebApp/api`
