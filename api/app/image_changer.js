@@ -1,4 +1,13 @@
-module.exports.imageChanger = (function (filename, color_r, color_g, color_b, color_a = 1) {
+/**
+ * 指定した画像をRGB値に変換し、Base64エンコードを行う。
+ * @param {*} filename 変換するファイルのパス
+ * @param {*} color_r R値
+ * @param {*} color_g G値
+ * @param {*} color_b B値
+ * @param {number} [color_a=1] α値
+ * @returns [ステータスコード, レスポンスデータ]
+ */
+const imageChanger = (filename, color_r, color_g, color_b, color_a = 1) => {
     const fs = require('fs');
     const canvas_saver = require('./canvas_saver');
     const Canvas = require('canvas'),
@@ -44,4 +53,6 @@ module.exports.imageChanger = (function (filename, color_r, color_g, color_b, co
     // });
 
     return CreateResponse(1, Buffer.from(convert_toBase64(canvas), 'base64').toString("base64"));
-});
+}
+
+module.exports = imageChanger;
