@@ -32,7 +32,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    res.status(404).send('Not Found');
+    res.status(404).json({
+        status:404,
+        message:'Not Found',
+        Response:''
+    });
     // next(createError(404));
 });
 
