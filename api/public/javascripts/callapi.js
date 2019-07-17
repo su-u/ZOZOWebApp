@@ -43,7 +43,7 @@ const setColorValue = (elemetId, colorString) => {
 const callApi = (callUrl, formElementId, imgElementId) => {
     const formData = new FormData(document.getElementById(formElementId));
     const params = new URLSearchParams(formData);
-    fetch(callUrl + params.toString().replace('#', ''))
+    fetch(callUrl + params.toString())
         .then(response => {
             return response.text();
         })
@@ -60,9 +60,9 @@ const topsElementId = 'tops-color'
 const topsPicker = createPickr('#' + topsElementId + '-picker');
 
 topsPicker.on('save', (color, instance) => {
-    setColorValue('tops-color', color.toHEXA().toString());
+    setColorValue('tops-color', color.toHEXA().toString().replace('#', ''));
 }).on('change', (color, instance) => {
-    setColorValue('tops-color', color.toHEXA().toString());
+    setColorValue('tops-color', color.toHEXA().toString().replace('#', ''));
 });
 
 //bottoms
@@ -70,9 +70,9 @@ const bottomsElementId = 'bottoms-color'
 const bottomsPicker = createPickr('#' + bottomsElementId + '-picker');
 
 bottomsPicker.on('save', (color, instance) => {
-    setColorValue(bottomsElementId, color.toHEXA().toString());
+    setColorValue(bottomsElementId, color.toHEXA().toString().replace('#', ''));
 }).on('change', (color, instance) => {
-    setColorValue(bottomsElementId, color.toHEXA().toString());
+    setColorValue(bottomsElementId, color.toHEXA().toString().replace('#', ''));
 });
 
 //shoes
@@ -80,9 +80,9 @@ const shoesElementId = 'shoes-color'
 const shoesPicker = createPickr('#' + shoesElementId + '-picker');
 
 shoesPicker.on('save', (color, instance) => {
-    setColorValue(shoesElementId, color.toHEXA().toString());
+    setColorValue(shoesElementId, color.toHEXA().toString().replace('#', ''));
 }).on('change', (color, instance) => {
-    setColorValue(shoesElementId, color.toHEXA().toString());
+    setColorValue(shoesElementId, color.toHEXA().toString().replace('#', ''));
 });
 
 $(function () {
