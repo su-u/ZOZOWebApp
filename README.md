@@ -7,11 +7,11 @@
     [ダウンロード | Node.js](https://nodejs.org/ja/download/)
 1. pakageのインストール
     - Windows PoweShell  
-        `git clone https://github.com/su-u/ZOZOWebApp.git ;cd ./ZOZOWebApp ;npm i ;cd ./api ;npm i;`
+            `git clone https://github.com/su-u/ZOZOWebApp.git ;cd ./ZOZOWebApp ;npm i ;cd ./api ;npm i;`
     - Windows cmd  
-        `git clone https://github.com/su-u/ZOZOWebApp.git &cd ./ZOZOWebApp &npm i &cd ./api &npm i`
+            `git clone https://github.com/su-u/ZOZOWebApp.git &cd ./ZOZOWebApp &npm i &cd ./api &npm i`
     - Linux  
-        `git clone https://github.com/su-u/ZOZOWebApp.git && cd ./ZOZOWebApp && npm i && cd ./api && npm i`
+            `git clone https://github.com/su-u/ZOZOWebApp.git && cd ./ZOZOWebApp && npm i && cd ./api && npm i`
 
 ## Webサーバー実行手順
 1. `cd /ZOZOWebApp/api`
