@@ -104,7 +104,7 @@ img {
     height: 40px;
     width: 150px;
 }
-.button:hover {
+.button:hover{
     border: 2px solid #1B73BA;
 }
 
@@ -135,4 +135,4 @@ img {
     padding: 10px;
     height: 40px;
     width: 200px;
-    }
+}
