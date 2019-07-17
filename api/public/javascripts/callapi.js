@@ -1,3 +1,8 @@
+/**
+ * 指定したエレメントIDを持ったPickrクラスの生成
+ * @param {*} elementId
+ * @returns {Pickr}
+ */
 const createPickr = (elementId) => {
     return Pickr.create({
         el: elementId,
@@ -19,19 +24,31 @@ const createPickr = (elementId) => {
     });
 }
 
+/**
+ * 指定した、elementIdを持つオブジェクトのvalue属性に値をセットする
+ * @param {*} elemetId セット先
+ * @param {*} colorString 保存する値
+ */
 const setColorValue = (elemetId, colorString) => {
-    document.getElementById(elemetId).value = colorString.replace('#', '');
+    document.getElementById(elemetId).value = colorString;
 }
 
+
+/**
+ * APIの呼び出しとレスポンスデータ処理
+ * @param {*} callUrl コール先URL
+ * @param {*} formElementId リクエストデータ指定先
+ * @param {*} imgElementId レスポンスデータ反映先
+ */
 const callApi = (callUrl, formElementId, imgElementId) => {
     const formData = new FormData(document.getElementById(formElementId));
     const params = new URLSearchParams(formData);
-    fetch(callUrl + params.toString())
+    fetch(callUrl + params.toString().replace('#', ''))
         .then(response => {
             return response.text();
         })
         .then(body => {
-            var elem = document.getElementById(imgElementId);
+            let elem = document.getElementById(imgElementId);
             console.log(body);
             responseJson = JSON.parse(body);
             elem.src = responseJson.response;
