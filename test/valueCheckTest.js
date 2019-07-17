@@ -1,20 +1,5 @@
 const assert = require('assert');
 
-describe('checkTypeValueTest', function () {
-    const checkTypeValue = require('../api/app/checkTypeValue');
-
-    it('Correct value', function () {
-        const [status, message, type] = checkTypeValue('testtype');
-        assert.equal(1, status);
-        assert.equal('', message);
-    });
-    it('Empty', function () {
-        const [status, message, type] = checkTypeValue('');
-        assert.equal(-1, status);
-        assert.equal('type is empty.', message);
-    });
-});
-
 describe('checkColorValueTest', function () {
     const checkColorValue = require('../api/app/checkColorValue');
 
