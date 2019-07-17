@@ -4,7 +4,7 @@
 
 ## 開発環境の構築手順
 1. node.jsのインストール。  
-    [ダウンロード | Node.js](https://nodejs.org/ja/download/)
+    [ダウンロード | Node.js](https://nodejs.org/ja/download/)  
     10.16.0を使用して開発。
 1. コマンド実行
     - Windows PoweShell  
