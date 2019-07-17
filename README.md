@@ -1,6 +1,10 @@
 # ZOZOWebApp
 
 ## 概要
+- 「カラーコーディネーター」
+
+
+
 
 ## 開発環境の構築手順
 1. node.jsのインストール。  
@@ -8,13 +12,13 @@
     10.16.0を使用して開発。
 1. コマンド実行
     - Windows PoweShell  
-      `cd /ZOZOWebApp;npm i;`
+      `cd /ZOZOWebApp;npm i;`  
       `cd ./api;npm i;`
     - Windows cmd  
-      `cd /ZOZOWebApp&npm i`
+      `cd /ZOZOWebApp&npm i`  
       `cd ./api&npm i`
     - Linux  
-      `cd /ZOZOWebApp && npm i`
+      `cd /ZOZOWebApp && npm i`  
       `cd ./api && npm i`
 
 ## Webサーバー実行手順
