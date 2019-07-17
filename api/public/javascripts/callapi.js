@@ -14,11 +14,12 @@ const createPickr = (elementId) => {
             hue: true,
 
             interaction: {
+                hex: true,
+                input: true,
                 save: true
             },
             output: {
                 hex: true,
-                input: true
             }
         }
     });
