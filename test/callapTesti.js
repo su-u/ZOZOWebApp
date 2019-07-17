@@ -21,10 +21,13 @@ describe('Calltest', function (done) {
             .expect(200)
             .end(done);
     });
-    it('/aaaaaa', function (done) {
+    it('/aaaa', function (done) {
         request(app)
-            .get('/aaaaaa')
-            .expect(404)
-            .end(done);
+            .get('/aaaa')
+            .expect(404, {
+                status: 404,
+                message: 'Not Found',
+                response: ''
+            }, done);
     });
 });
