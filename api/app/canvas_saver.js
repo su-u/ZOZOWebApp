@@ -1,5 +1,3 @@
-// node-canvasのcanvasを画像データとして保存する
-
 module.exports = (function () {
     "use strict";
 
