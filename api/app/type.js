@@ -3,7 +3,8 @@ const CreateResponse = (statusCode, message, path) => {
 }
 
 const getTopsImg = (type) => {
-    const file = ['./img/IMG_0771_c.PNG', './img/IMG_0776_c.PNG', './img/IMG_0769_c.PNG'];
+    //無地, しま模様, ボーダー, 水玉
+    const file = ['./img/IMG_0771_c.PNG', './img/IMG_0837_c.PNG', './img/IMG_0769_c.PNG', './img/IMG_0838_c.PNG'];
 
     if (type == null) {
         return CreateResponse(-1, 'type is empty.', '');
