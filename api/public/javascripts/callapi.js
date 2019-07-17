@@ -7,7 +7,7 @@ const createPickr = (elementId) => {
     return Pickr.create({
         el: elementId,
         theme: 'nano',
-        default: 'ff00ff',
+        default: '#1E8A34',
         components: {
 
             preview: true,
