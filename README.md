@@ -24,6 +24,7 @@
 ## Webサーバー実行手順
 1. `cd /ZOZOWebApp/api`
 1. `node ./bin/www`
+デフォルトでは、3000ポートで起動。
 
 ## テスト実行
 1. `cd /ZOZOWebApp`
