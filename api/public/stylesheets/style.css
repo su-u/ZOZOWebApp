@@ -52,7 +52,7 @@ body{
     display: flex;
 }
 .wrapper-form{
-    margin: auto auto auto 20%;
+    /* margin: auto auto auto 20%; */
 }
 
 img {
@@ -77,7 +77,7 @@ img {
 .form{
     height: 300px;
     margin: 20px 5%;
-    padding: 30px 10% 390px 5%;
+    padding: 30px 5% 390px 5%;
     background-color: #fff;
     box-shadow: 0px 3px 8px rgba(0,0,0,.8);
     border-radius: 10px;
