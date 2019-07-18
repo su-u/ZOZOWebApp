@@ -85,7 +85,6 @@ img {
 }
 @media screen and (max-width: 1600px) {
     .form{
-        padding: 30px 10% 450px 5%;
         width:auto;
     }
 }
