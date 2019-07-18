@@ -86,6 +86,8 @@ shoesPicker.on('save', (color, instance) => {
     setColorValue(shoesElementId, color.toHEXA().toString().replace('#', ''));
 });
 
+
+//ボタン操作
 $(function () {
     $('#tops-api').click(function () {
         callApi('/api/v1/tops?', 'tops-form', 'tops-img');
