@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    background: -webkit-linear-gradient(top, #BCC5CE 0%, #929EAD 98%), -webkit-radial-gradient(at top left, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-blend-mode: screen;
+    font-size: 20px;
+}
+.top-header {
+    top: 0;
+    width: 100%;
+    background-color: #202124;
+    height: 60px;
+    color:white;
+    display: flex;
+}
+.top-header .title, .git-icon{
+    padding-left: 30px;
+    padding-top:10px;
+    font-weight:600;
+    font-size:30px;
+}
+.title::first-line{
+    color: #FF8C00;
+    background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.git-icon{
+    color: #fff;
+    padding-top: 15px;
+    padding-left: 0;
+    padding-right: 10px;
+}
+.top-header div:last-child{
+    margin-left: auto;
+}
+
+.octicon{
+    fill: currentColor;
+}
+.pcr-button{
+    margin-left: 7px;
+}
+
+.pickr .pcr-button{
+    width: 200px;
+    height: 30px;
+}
+
+.wrapper-color{
+    display: flex;
+}
+.wrapper-form{
+    /* margin: auto auto auto 20%; */
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+.container{
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+        background-color: #dbdbdb;
+    box-shadow: 0px 3px 10px rgba(0,0,0,.8);
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 960px) {
+    .container{
+        display: block;
+    }
+}
+.form{
+    height: 300px;
+    margin: 20px 5%;
+    padding: 30px 5% 390px 5%;
+    background-color: #fff;
+    box-shadow: 0px 3px 8px rgba(0,0,0,.8);
+    border-radius: 10px;
+    width: 25%;
+}
+@media screen and (max-width: 1600px) {
+    .form{
+        width:auto;
+    }
+}
+.wrapper-img{
+    margin: 0 50px;
+}
+.img{
+    width: 300px;
+}
+
+.button {
+    border:1px solid #1B73BA;
+    background-color: #fff;
+    color:  #1B73BA;;
+    font-size: 14px;
+    transition: .2s all;
+    height: 40px;
+    width: 150px;
+}
+.button:hover{
+    border: 2px solid #1B73BA;
+}
+
+.button:active{
+    background-color: #1B73BA;
+    color: #fff;
+}
+
+.pulldown {
+    /* display: flex; */
+    padding-bottom: 20px;
+    position: relative;
+}
+.pulldown select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(/images/btn.png) no-repeat right;
+    border-top: 1px solid #1B73BA;
+    border-bottom: 1px solid #1B73BA;
+    border-left: 1px solid #1B73BA;
+    border-right: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+    color: #333;
+    text-indent: .01px;
+    padding: 10px;
+    height: 40px;
+    width: 200px;
+}
